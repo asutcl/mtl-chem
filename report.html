@@ -13116,7 +13116,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="InVivo-Technical-Test">InVivo Technical Test<a class="anchor-link" href="#InVivo-Technical-Test">&#182;</a></h1><p>This is a short report of an analysis conducted on the supplied data set. It was done with no prior knowledge of chemistry or RDKit. Since this was done in a relatively short time span (one weekend), I aimed to put forth my interpretation of the results rather than producing the best results possible. Better results could be achieved by further tunning the model parameters.</p>
+<h1 id="InVivo-Technical-Test">InVivo Technical Test<a class="anchor-link" href="#InVivo-Technical-Test">&#182;</a></h1><p>This is a short report of an analysis conducted on the supplied data set. It was done with no prior knowledge of chemistry or RDKit. Since this was done in a relatively short time span (one weekend, since I work full time), I aimed to put forth my interpretation of the results rather than producing the best results possible. Better results could be achieved by further tunning the model parameters.</p>
 <p>The report is divided into four sections:</p>
 <ul>
 <li>Preliminary Data Analysis</li>
@@ -13195,7 +13195,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Preliminary-Data-Analysis-ad-PreProcessing">Preliminary Data Analysis ad PreProcessing<a class="anchor-link" href="#Preliminary-Data-Analysis-ad-PreProcessing">&#182;</a></h1><p>Data was loaded following which a TSNE embedding was performed in order to gain an understanding of the data. A smililarity analysis was run between targets. Finally, a short manual assessment of molecular substructures relevant for targets 1 and 2 was attempted.</p>
+<h1 id="Preliminary-Data-Analysis-and-PreProcessing">Preliminary Data Analysis and PreProcessing<a class="anchor-link" href="#Preliminary-Data-Analysis-and-PreProcessing">&#182;</a></h1><p>Data was loaded following which a TSNE embedding was performed in order to gain an understanding of the data. A similarity analysis was run between targets. Finally, a short manual assessment of molecular substructures relevant for targets 1 and 2 was attempted.</p>
 
 </div>
 </div>
@@ -13398,9 +13398,9 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Quick-analysis-of-class-distribution">Quick analysis of class distribution<a class="anchor-link" href="#Quick-analysis-of-class-distribution">&#182;</a></h2><p>All molecules were succesfully laoded into RDKit.</p>
-<p>As shown by the table below, positive targets are rare events. For all targets, classes (positive, negative) are highly skewed towards negative. This will be taken into consideraiton in our approach.</p>
-<p>NOTE: Missing values were disregarded for all subsequent analyses. This is why counts will not add up to the total number of molecules. This was done to simplidy the analysis given the timeframe. We also assume there that the labels provided (0 and 1) are correct.</p>
+<h2 id="Quick-analysis-of-class-distribution">Quick analysis of class distribution<a class="anchor-link" href="#Quick-analysis-of-class-distribution">&#182;</a></h2><p>All molecules were succesfully loaded into RDKit.</p>
+<p>As shown by the table below, positive targets are rare events. For all targets, classes (positive, negative) are highly skewed towards negative. This will be taken into consideration in our approach.</p>
+<p>NOTE: Missing values were disregarded for all subsequent analyses. This is why counts will not add up to the total number of molecules. This was done to simplify the analysis given the timeframe. We also assume there that the labels provided (0 and 1) are correct.</p>
 
 </div>
 </div>
@@ -13491,7 +13491,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Intepretation-of-TSNE">Intepretation of TSNE<a class="anchor-link" href="#Intepretation-of-TSNE">&#182;</a></h2><p>TSNE produce a probabilistic embedding of data in a lower dimensional space by trying to conserve the distances between datapoints. I embedded the data in 2D space with to goal of gaining a qualitative assement of the Morgan fingerprint. The top graph shows the scatter plot of all molecules. We see a dense oval scatter which indicates that the molecules may be distributed fairly evenly over the fingerprint space. The following 12 plots show only the positive examples for each of the targets. We note a few key observations:</p>
+<h2 id="Interpretation-of-TSNE">Interpretation of TSNE<a class="anchor-link" href="#Interpretation-of-TSNE">&#182;</a></h2><p>TSNE produce a probabilistic embedding of data in a lower dimensional space by trying to conserve the distances between datapoints. I embedded the data in 2D space with to goal of gaining a qualitative assessment of the Morgan fingerprint. The top graph shows the scatter plot of all molecules. We see a dense oval scatter which indicates that the molecules may be distributed fairly evenly over the fingerprint space. The following 12 plots show only the positive examples for each of the targets. We note a few key observations:</p>
 <ul>
 <li>In targets 1,2,5 and 6, there is a distinct cluster in the upper right corner of the embedding. This suggests there may be a correlation between certain targets. </li>
 <li>All targets seem to have molecules dispersed over the whole embedding. This suggests that the presence of a target on a molecule may be due to a small configuration of atoms on the molecule. Which would mean that molecules can be different overall but still exhibit the same target behaviour. The clusters observed could also indicate that certain configurations are more present in small molecules or molecules that share other similarities. </li>
@@ -13552,7 +13552,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Correlation-between-different-targets">Correlation between different targets<a class="anchor-link" href="#Correlation-between-different-targets">&#182;</a></h2><p>Our first observation with TSNE was that some target seems to have some sort of correlation, in other words, if we observerve that a molecule has target 1, it is more likely to also have target 2 than a any other randomly chosen molecule. To validate this assumption a similarity metric between target occurences was computed. Since the data is strongly imbalanced, the metric was chosen to only consider positive instances. It is computed by summing the joint occurences of two targets and dividing by the sum of the occurences of these same targets. A factor of 2 is added so that the metric lies between 0 and 1.</p>
+<h2 id="Correlation-between-different-targets">Correlation between different targets<a class="anchor-link" href="#Correlation-between-different-targets">&#182;</a></h2><p>Our first observation with TSNE was that some target seems to have some sort of correlation, in other words, if we observe that a molecule has Target 1, it is more likely to also have target 2 than any other randomly chosen molecule. To validate this assumption a similarity metric between target occurences was computed. Since the data is strongly imbalanced, the metric was chosen to only consider positive instances. It is computed by summing the joint occurences of two targets and dividing by the sum of the occurences of these same targets. A factor of 2 is added so that the metric lies between 0 and 1.</p>
 <p>$\frac{2 \cdot \sum{target_i \;\&amp;\&amp;\; target_j}}{\sum{target_i} + \sum{target_j}}$</p>
 <p>Values above 0.2 are highlighted in yellow, while 0.5 are highlighted in green. We see that the first observation from TSNE holds. The following targets seemed prone to pairing :  1 and 2, 5 and 6 and 8 and 11.</p>
 
@@ -14058,7 +14058,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Manually-Identifying-Molecule-Patterns-for-Target-1-and-2">Manually Identifying Molecule Patterns for Target 1 and 2<a class="anchor-link" href="#Manually-Identifying-Molecule-Patterns-for-Target-1-and-2">&#182;</a></h2><p>Target 1 and 2 seem to present the high density in the TSNE embedding. This suggest that for these targets all molecules may be both similar and of similar size. For this reason, a visual analysis was done a random subsample of each target. This is only an indicative qualitative assessment.</p>
+<h2 id="Manually-Identifying-Molecule-Patterns-for-Target-1-and-2">Manually Identifying Molecule Patterns for Target 1 and 2<a class="anchor-link" href="#Manually-Identifying-Molecule-Patterns-for-Target-1-and-2">&#182;</a></h2><p>Target 1 and 2 seem to present high density in the TSNE embedding. This suggest that for these targets all molecules may be both similar and of similar size. For this reason, a visual analysis was done on a random subsample of each target. This is only an indicative qualitative assessment.</p>
 <p>For Target 1, a visual assessment of 10 molecules suggests that the presence of a lone Oxygen atom bound to the molecule could be an indicator of target one.</p>
 <p>Unfortunately, for target 2 this analysis was not sufficient to identify a candidate pattern.</p>
 <p>This analysis was not pushed further, but could yield interesting results with a bit more expert knowledge and a better understanding of what a fingerprint is.</p>
@@ -14117,7 +14117,7 @@ div#notebook {
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Building-Classifiers">Building Classifiers<a class="anchor-link" href="#Building-Classifiers">&#182;</a></h1><p>This section concentates on building classifiers to analyse the data. Due to the highly imbalanced nature of the dataset, ensemble methods were prefered. Fingerprints written as binary vectors share a similarity with the bag of word approach in natural language processing. For this reason, logistic regression was chosen as a baseline.</p>
+<h1 id="Building-Classifiers">Building Classifiers<a class="anchor-link" href="#Building-Classifiers">&#182;</a></h1><p>This section concentrates on building classifiers to analyse the data. Due to the highly imbalanced nature of the dataset, ensemble methods were prefered. Fingerprints written as binary vectors share a similarity with the bag of word approach in natural language processing. For this reason, logistic regression was chosen as a baseline.</p>
 <p>The fingerprint length was used as a hyper-parameter we tested lengths of: 256, 512, 1024, 2048, and 4096.</p>
 <p>A very limited gridsearch was run on the different models to tune each models parameters, in order to keep the training time reasonable. The parameters tested are as follow:</p>
 <p>For logistic regression (LR):</p>
@@ -14228,7 +14228,7 @@ training models for length 4096
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h1><p>The table below shows the train, test and validation scores on the targets for the different algorithms. The parameter search was very limited. For this reason, overfitting is observed with the RTF model on all targets, and very poor performance for the ADA Boost model on all but targets 1 and 2.</p>
+<h1 id="Results">Results<a class="anchor-link" href="#Results">&#182;</a></h1><p>The table below shows the train, test and validation scores on the targets for the different algorithms. The best score for each column is highlighted in yellow. The parameter search was very limited. For this reason, overfitting is observed with the RTF model on all targets, and very poor performance for the ADA Boost model on all but targets 1 and 2.</p>
 <p>Logistic Regression performed best over all. The optimal parameters for the logistic regression model given the restricted search space were:</p>
 <ul>
 <li>C = 1</li>
@@ -15005,7 +15005,7 @@ true:1      45      34
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="Influence-of-the-Fingerprint-Length-Hyper-Parameter-on-Target-1">Influence of the Fingerprint Length Hyper-Parameter on Target 1<a class="anchor-link" href="#Influence-of-the-Fingerprint-Length-Hyper-Parameter-on-Target-1">&#182;</a></h2><p>The fingerprint length had little influence the RTF model for Target 1, which also indicates some overfitting. 
+<h2 id="Influence-of-the-Fingerprint-Length-Hyper-Parameter-on-Target-1">Influence of the Fingerprint Length Hyper-Parameter on Target 1<a class="anchor-link" href="#Influence-of-the-Fingerprint-Length-Hyper-Parameter-on-Target-1">&#182;</a></h2><p>The fingerprint length had little influence on the RTF model for Target 1, which also indicates some overfitting. 
 ADABoost and Logistic Regression both benefit from a longer fingerprint.</p>
 
 </div>
@@ -15109,7 +15109,16 @@ ADABoost and Logistic Regression both benefit from a longer fingerprint.</p>
 <div class="prompt input_prompt">In&nbsp;[160]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># # Apply data transforms</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">######</span>
+<span class="c1"># The following code is highly inspired from the pytorch tutorial.</span>
+<span class="c1"># I am currently learning how to use pytorch and wanted to make use of it in this</span>
+<span class="c1"># exercise</span>
+<span class="c1"># Source: https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html</span>
+<span class="c1"># License: BSD</span>
+<span class="c1"># Author: Sasank Chilamkurthy</span>
+<span class="c1">######</span>
+
+<span class="c1"># # Apply data transforms</span>
 <span class="c1"># data_transforms = {</span>
 <span class="c1">#     &#39;train&#39;: transforms.Compose([</span>
 <span class="c1">#         transforms.RandomResizedCrop(224),</span>
