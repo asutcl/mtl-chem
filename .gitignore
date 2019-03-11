@@ -5,7 +5,8 @@ __pycache__/
 
 # C extensions
 *.so
-
+#pickled
+*.p
 # Distribution / packaging
 .Python
 build/
@@ -102,3 +103,5 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+/molImages
